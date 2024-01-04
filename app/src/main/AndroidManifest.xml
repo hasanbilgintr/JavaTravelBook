@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Konum bilgini alabilme izni -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JavaMaps"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+                bu alana YOUR_API_KEY girilcek alınması için takip edelim
+        1.https://developers.google.com/maps/documentation/android-sdk/get-api-key tıkla
+        2.ordan  Set up in Cloud Console.tıkla bu açılcaktır  https://developers.google.com/maps/documentation/android-sdk/cloud-setup
+        3.ordan  Create new project yeni bir proje oluşturmamızı istiyo https://console.cloud.google.com/projectcreate?utm_source=developers.google.com&utm_medium=referral tıkla
+        4.google cloud platform sitesi açılır project name girilir
+        5.location girilir  yada girilmeyebilir (seçmedik)
+        6.create tıklanır açılan sayfa kapatılabilir (xe basılarak)
+        7.son 1.maddedeki linkte Set up in Cloud Console hemen altındaki  goto the credentials page tıkla oluşturulan proje ordadır
+        8.projeye tıklanır
+        9.paralı hesap kastediyo hemen almıyo create billing account (faturalı hesap) tıkla
+        10. turkey seçilir lisans kabul edilir(tiklenir) continue denir
+        11.telefon doğrulaması istenirse yapasın gmail beni direk tanıdığı için istemememişti
+        12.fatura hesabı vs bilgiler gelir ücretli versiyonlar ıolduğu için zaten gerekti bunlar he girilmeyebilirdi sorun yok
+        13.eksik bilgiler varsa girilir en son start my free trial tıklanır
+        14.sonra tekrar 1.maddedeki linkte Set up in Cloud Console hemen altındaki  goto the credentials page tıkla projeni tıkla direk your key api gelicektir kopyalarsın
+        15.alta yapıştırılır siteye tekrar gelinir  goto google maps platform tıklanır
+        16.açılan pencerede yada açılmazsa sol üstte proje (mavi barda) adına tıkla açılan pencerden Android apps seçilir (sadece android uygulamalarındna kullanılsın kastediyor). package name girersin  android studyo projesnden  package com.hasanbilgin.javamaps; den   com.hasanbilgin.javamaps girilir
+        17.SHA-1 certificate fingerpaint ise (bizim tarafından gerçekten imzalanan sertifika diyebiliiriz) şimdilik almaya gerek yok boş bıaktık yani playa girilirken yapılcaktır kaydemekmek içinrestrict key denilebilir ama play koymucamız için maybe later dedik
+        18.son
+        -->
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/YOUR_API_KEY" />
+
+        <activity
+            android:name=".view.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
+
+        </activity>
+    </application>
+
+</manifest>
